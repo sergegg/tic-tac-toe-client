@@ -1,17 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1>Tic-Tac-Toe Baby!!!!</h1>
+  <h5>This application was built and designed by Sergey Honiyan</h5>
+
+  <p id="message"></p>
+
+  <div class="unconfirmed">
+    <form id="sign-up" action="POST">
+      <input placeholder="Email" type="email" name="credentials[email]" />
+      <input placeholder="Desired Password" type="password" name="credentials[password]" />
+      <input placeholder="Confirm Password" type="password" name="credentials[password_confirmation]" />
+      <button type="submit" name="button">Sign up!</button>
+    </form>
+    <form id="sign-in" action="POST">
+      <input placeholder="Your Email" type="text" name="credentials[email]" />
+      <input placeholder="Your Password" type="password" name="credentials[password]" />
+      <button type="submit" name="button">Sign in!</button>
+    </form>
+  </div>
+
+  <div class="confirmed">
+    <p id="message2"></p>
+    <form id="change-pw" action="PATCH">
+      <input placeholder="Old Password" type="password" name="passwords[old]"/>
+      <input placeholder="New Password" type="password" name="passwords[new]"/>
+      <button type="submit" name="button">Confirm Changes</button>
+    </form>
+    <form id="sign-out" action='DELETE'>
+      <button type="button" name="button">Sign Out!</button>
+      <p>Hope to see you back soon!</p>
+    </form>
+  </div>
+  <div class="confirmed">
+    <form id="get-games" action="GET">
+      <button type="button"
+        name="button">Click here to view all games!</button>
+    </form>
+    <form id="get-game" action="GET">
+      <input placeholder="Game ID" type="text" name="games[id]"
+      <button type="click"
+        name="button">Click here to view one game!</button>
+    </form>
+    <form id="start-game" action="POST">
+      <button type="button" name="button">Click here to start new game!</button>
+    </form>
+    <form id="game-update" action="PATCH">
+      <div class="row">
+        <button class="col-4" type="button" name="gamebutton">Pick me!</button>
+        <button class="col-4" type="button" name="gamebutton">Pick me!</button>
+        <button class="col-4" type="button" name="gamebutton">Pick me!</button>
+        <button class="col-4" type="button" name="gamebutton">Pick me!</button>
+        <button class="col-4" type="button" name="gamebutton">Pick me!</button>
+        <button class="col-4" type="button" name="gamebutton">Pick me!</button>
+        <button class="col-4" type="button" name="gamebutton">Pick me!</button>
+        <button class="col-4" type="button" name="gamebutton">Pick me!</button>
+        <button class="col-4" type="button" name="gamebutton">Pick me!</button>
+    </div>
+    </form>
+
+  </div>
+
+</body>
 </html>
