@@ -11,6 +11,8 @@ const gameEvents = require('./games/events')
 $(() => {
   // hide all fields which need sign-in before usage
   $('.confirmed').hide()
+  // hide game setup until the user presses "new game"
+  $('#game-table').hide()
   // set up the sign up
   $('#sign-up').on('submit', authEvents.onSignUp)
   // set up the sign up
@@ -22,11 +24,13 @@ $(() => {
 
   // game settings
   // when clicked, the button will display all games played
-  $('#get-games').on('click', gameEvents.onGetGames)
-  // when clicked, the button will display one game played with ID provided
-  $('#get-game').on('click', gameEvents.onGetGame)
+  // $('#get-games').on('click', gameEvents.onGetGames)
+  // // when clicked, the button will display one game played with ID provided
+  // $('#get-game').on('submit', gameEvents.onGetGame)
   // when clicked, the button will start a brand new game
   $('#start-game').on('click', gameEvents.onCreateGame)
+  // when clicked, register the click in the system
+  // $('.row').on('click', gameEvents.onClick) //
   // when clicked, the button will update the game
-  $('#game-update').on('click', gameEvents.onGameUpdate)
+  $('#game-table').on('click', 'button', gameEvents.onGameUpdate)
 })
