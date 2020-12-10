@@ -30,7 +30,7 @@ $(() => {
   // when clicked, the button will start a brand new game
   $('#start-game').on('click', gameEvents.onCreateGame)
   // when clicked, register the click in the system
-  // $('.row').on('click', gameEvents.onClick) //
+  // $('#b').on('click', gameEvents.onClick) //
   // when clicked, the button will update the game
   $('#game-table').on('click', 'button', gameEvents.onGameUpdate)
 })

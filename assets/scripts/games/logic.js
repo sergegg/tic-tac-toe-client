@@ -10,12 +10,14 @@ const player2 = 'Y'
 // need function to rotate between players
 const rotatePlayers = function (event) {
   let user = ''
+  if (user === player1) {
+
+  }
 }
 // need a function to track if the current box is taken
 // need a function to track winner and loser
 // obtain current index
 // function to check for tie
-
 
 module.exports = {
   rotatePlayers
