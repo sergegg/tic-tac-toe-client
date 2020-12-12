@@ -3,6 +3,7 @@
 const store = require('./../store')
 // require the logic for the gameboard
 // const logic = require('./logic')
+let isOver = false
 
 const onError = function (error) {
   $('#message2').text('Failed to execute, please try again or fix the code. ', error)
@@ -10,18 +11,23 @@ const onError = function (error) {
 const onCreateGameSuccess = function (event) {
   $('#message2').text('Game Created. Have fun! "X" goes first ')
   $('#game-table').show()
+
+  // $('#b').html('Pick me!')
   console.log('the event for create game is ', event)
   store.game = event.game
   // console.log('current is', event)
 }
 const onGameUpdateSuccess = function (event) {
   // $('#message2').show()
-  // store.game = event.game
   store.game = event.game
   console.log('hello, are you here? ', event)
   console.log('store.game huh? ', store.game)
   $('#message2').text('Game updated. Next player move ')
   // $('')
+}
+
+const onGameOver = function (event) {
+  $('#message2').text('You won! congragulations!')
 }
 
 // console.log('what is logic?/ ', logic)
@@ -50,6 +56,7 @@ module.exports = {
   onError,
   // onGetGamesSuccess,
   // onGetGameSuccess,
+  onGameOver,
   onCreateGameSuccess,
   onGameUpdateSuccess
 }

@@ -1,7 +1,7 @@
 'use strict'
 const config = require('./../config')
 const store = require('./../store')
-const events = require('./events')
+// const events = require('./events')
 // const ui = require('./ui')
 
 // const index = function (data) {
@@ -34,7 +34,7 @@ const createGame = function (data) {
     data: {}
   })
 }
-const gameUpdate = function (cellIndex, currentPlayer) {
+const gameUpdate = function (cellIndex, currentPlayer, isOver) {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
@@ -47,7 +47,7 @@ const gameUpdate = function (cellIndex, currentPlayer) {
           index: cellIndex,
           value: currentPlayer
         },
-        over: false
+        over: isOver
       }
     }
   })

@@ -24,6 +24,7 @@ let currentPlayer = ''
 
 const onCreateGame = function () {
   event.preventDefault()
+  // $('#game-table').unbind(store.game)
   // set current
   api.createGame()
     .then(ui.onCreateGameSuccess)
@@ -43,32 +44,150 @@ const onCreateGame = function () {
 //   }
 // }
 
-const isOver = function (event) {
-
-}
+// function to figure out the position of
 
 const onGameUpdate = function (event) {
   event.preventDefault()
+  let isOver = false
+  // console.log('did we create a new game??? ', event.target)
   // const gameCells = ['0', '1', '2', '3', '4', '5', '6', '7', '8']
+  // console.log('in case you forget what event is, ', event)
   const cellIndex = $(this).data('cell-index')
+  // const arr = [store.game.cells]
   const currentBox = event.target
-  // console.log(cellIndex)
-  // console.log(currentBox)
-  // console.log(currentPlayer)
+  // let isOver = false
+  console.log('I am cellIndex ', cellIndex)
+  console.log('I am currentBox ', currentBox)
+  console.log('I am currentPlayer ', currentPlayer)
+  console.log('I am store.game.cells[0]----', store.game.cells[0])
+  console.log('I am store.game.cells[1]----', store.game.cells[1])
+  console.log('I am store.game.cells[2]----', store.game.cells[2])
+
   if ($(currentBox).html() === 'Click me!') {
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X'
     $(currentBox).html(currentPlayer)
-    api.gameUpdate(cellIndex, currentPlayer)
+    if ((store.game.cells[0] === currentPlayer) &&
+        (store.game.cells[1] === currentPlayer) &&
+        (store.game.cells[2] === currentPlayer)) {
+      isOver = true
+    } else if
+    ((store.game.cells[0] === currentPlayer) &&
+        (store.game.cells[3] === currentPlayer) &&
+        (store.game.cells[6] === currentPlayer)) {
+      isOver = true
+    } else if
+    ((store.game.cells[6] === currentPlayer) &&
+        (store.game.cells[7] === currentPlayer) &&
+        (store.game.cells[8] === currentPlayer)) {
+      isOver = true
+    } else if
+    ((store.game.cells[2] === currentPlayer) &&
+        (store.game.cells[5] === currentPlayer) &&
+        (store.game.cells[8] === currentPlayer)) {
+      isOver = true
+    } else if
+    ((store.game.cells[0] === currentPlayer) &&
+      (store.game.cells[4] === currentPlayer) &&
+      (store.game.cells[8] === currentPlayer)) {
+      isOver = true
+    } else if
+    ((store.game.cells[2] === currentPlayer) &&
+    (store.game.cells[4] === currentPlayer) &&
+    (store.game.cells[6] === currentPlayer)) {
+      isOver = true
+    } else if
+    ((store.game.cells[1] === currentPlayer) &&
+        (store.game.cells[4] === currentPlayer) &&
+        (store.game.cells[7] === currentPlayer)) {
+      isOver = true
+    } else if
+    ((store.game.cells[3] === currentPlayer) &&
+        (store.game.cells[4] === currentPlayer) &&
+        (store.game.cells[5] === currentPlayer)) {
+      isOver = true
+    }
+    api.gameUpdate(cellIndex, currentPlayer, isOver)
       .then(ui.onGameUpdateSuccess)
-      .then(ui.checkGameOver)
-    // console.log(currentPlayer)
+      .catch(ui.onError)
   } else {
-    $('#message2').text('no bueno, space taken.. ')
+    $('#message2').text('No bueno, try again.. ')
   }
-  // api.gameUpdate(cellIndex, currentPlayer)
-  //   .then(ui.onGameUpdateSuccess)
-  //   .then(ui.checkGameOver)
-  //   .catch(ui.onError)
+  // if ((store.game.cells[0] === currentPlayer) &&
+  //     (store.game.cells[1] === currentPlayer) &&
+  //     (store.game.cells[2] === currentPlayer)) {
+  //   isOver = true
+  //   api.gameUpdate(cellIndex, currentPlayer, isOver)
+  //     .then(ui.onGameUpdateSuccess)
+  //     .then(ui.onGameOver)
+  //     .catch(ui.onError)
+  // } else if
+  // ((store.game.cells[0] === currentPlayer) &&
+  //     (store.game.cells[3] === currentPlayer) &&
+  //     (store.game.cells[6] === currentPlayer)) {
+  //   isOver = true
+  //   api.gameUpdate(cellIndex, currentPlayer, isOver)
+  //     .then(ui.onGameUpdateSuccess)
+  //     .then(ui.onGameOver)
+  //     .catch(ui.onError)
+  // } else if
+  // ((store.game.cells[6] === currentPlayer) &&
+  //     (store.game.cells[7] === currentPlayer) &&
+  //     (store.game.cells[8] === currentPlayer)) {
+  //   isOver = true
+  //   api.gameUpdate(cellIndex, currentPlayer, isOver)
+  //     .then(ui.onGameUpdateSuccess)
+  //     .then(ui.onGameOver)
+  //     .catch(ui.onError)
+  // } else if
+  // ((store.game.cells[2] === currentPlayer) &&
+  //     (store.game.cells[5] === currentPlayer) &&
+  //     (store.game.cells[8] === currentPlayer)) {
+  //   isOver = true
+  //   api.gameUpdate(cellIndex, currentPlayer, isOver)
+  //     .then(ui.onGameUpdateSuccess)
+  //     .then(ui.onGameOver)
+  //     .catch(ui.onError)
+  // } else if
+  // ((store.game.cells[0] === currentPlayer) &&
+  //   (store.game.cells[4] === currentPlayer) &&
+  //   (store.game.cells[8] === currentPlayer)) {
+  //   isOver = true
+  //   api.gameUpdate(cellIndex, currentPlayer, isOver)
+  //     .then(ui.onGameUpdateSuccess)
+  //     .then(ui.onGameOver)
+  //     .catch(ui.onError)
+  // } else if
+  // ((store.game.cells[2] === currentPlayer) &&
+  // (store.game.cells[4] === currentPlayer) &&
+  // (store.game.cells[6] === currentPlayer)) {
+  //   isOver = true
+  //   api.gameUpdate(cellIndex, currentPlayer, isOver)
+  //     .then(ui.onGameUpdateSuccess)
+  //     .then(ui.onGameOver)
+  //     .catch(ui.onError)
+  // } else if
+  // ((store.game.cells[1] === currentPlayer) &&
+  //     (store.game.cells[4] === currentPlayer) &&
+  //     (store.game.cells[7] === currentPlayer)) {
+  //   isOver = true
+  //   api.gameUpdate(cellIndex, currentPlayer, isOver)
+  //     .then(ui.onGameUpdateSuccess)
+  //     .then(ui.onGameOver)
+  //     .catch(ui.onError)
+  // } else if
+  // ((store.game.cells[3] === currentPlayer) &&
+  //     (store.game.cells[4] === currentPlayer) &&
+  //     (store.game.cells[5] === currentPlayer)) {
+  //   isOver = true
+  //   api.gameUpdate(cellIndex, currentPlayer, isOver)
+  //     .then(ui.onGameUpdateSuccess)
+  //     .then(ui.onGameOver)
+  //     .catch(ui.onError)
+  // }
+  //  else if (store.game.cells.length > 9) {
+  //   // if array is full then its a tie. game over, tie.
+  //   $('#message2').html("Game over!!! It's a tie!")
+  // }
 }
 
 // console.log('cellIndex is correct?? ', cellIndex)
@@ -79,11 +198,18 @@ const onGameUpdate = function (event) {
 // check if the box is empty, if yes, update the api and the html text in box
 // if (store.data.game.cells[cellIndex] === '') {
 // $(this).data('user',  )
+// const locations = []
+// for (let i = 0; i < store.game.cells.length; i++) {
+//   if (store.game.cells[i] === 'X') {
+//     locations.push(i)
+//     return locations
+//   }
+// }
 
 module.exports = {
   // onGetGames,
   // onGetGame,
-  isOver,
+  // isOver,
   onCreateGame,
   // onClick,
   onGameUpdate
