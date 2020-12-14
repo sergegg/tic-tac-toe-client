@@ -4,7 +4,7 @@
 <head>
   <title>Example</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link rel="stylesheet" href="assets/styles/styles.css">
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -12,13 +12,11 @@
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
-
 <body>
-  <h1>Tic-Tac-Toe Baby!!!!</h1>
-  <h5>This application was built and designed by Sergey Honiyan</h5>
 
-  <p id="message"></p>
-
+  <header class="toptop">
+<div class ="top-intro">
+  <h1>Classic Tic-Tac-Toe! </h1>
   <div class="unconfirmed">
     <form id="sign-up" action="POST">
       <input placeholder="Email" type="email" name="credentials[email]" />
@@ -32,27 +30,30 @@
       <button type="submit" name="button">Sign in!</button>
     </form>
   </div>
+  <div class="confirmedHeader">
+  <form id="sign-out" action='DELETE'>
+    <button type="button" name="button">Sign Out!</button>
+    <p>Hope to see you back soon!</p>
+  </form>
+  <form id="change-pw" action="PATCH">
+    <input placeholder="Old Password" type="password" name="passwords[old]"/>
+    <input placeholder="New Password" type="password" name="passwords[new]"/>
+    <button type="submit" name="button">Confirm Changes</button>
+  </form>
+</div>
+</div>
 
-  <div class="confirmed">
+</header>
+
+<p id="message"></p>
+<div class='confirmed'>
     <p id="message2"></p>
-    <form id="change-pw" action="PATCH">
-      <input placeholder="Old Password" type="password" name="passwords[old]"/>
-      <input placeholder="New Password" type="password" name="passwords[new]"/>
-      <button type="submit" name="button">Confirm Changes</button>
-    </form>
-    <form id="sign-out" action='DELETE'>
-      <button type="button" name="button">Sign Out!</button>
-      <p>Hope to see you back soon!</p>
-      }
-    </form>
-  </div>
-  <div class="confirmed">
     <form id="get-games" action="GET">
       <button type="button"
         name="button">Click here to view all games!</button>
     </form>
     <form id="get-game" action="GET">
-      <input placeholder="Game ID" type="text" name="games[id]" />
+      <input placeholder="Game-id" type="text" name="games[id]" />
       <button type="button" name="button">Click here to view one game!</button>
     </form>
     <form id="start-game" action="POST">
@@ -69,8 +70,10 @@
          <button data-cell-index='7' id="b" type="button" class="col-4">Click me!</button>
          <button data-cell-index='8' id="b" type="button" class="col-4">Click me!</button>
    </div>
-
-  </div>
+</div>
+ <!-- <footer>
+     <h5>This application was built and designed by Sergey Honiyan</h5>
+  </footer> -->
 
 </body>
 </html>

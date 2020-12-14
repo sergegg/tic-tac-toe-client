@@ -4,26 +4,26 @@ const store = require('./../store')
 // const events = require('./events')
 // const ui = require('./ui')
 
-// const index = function (data) {
-//   return $.ajax({
-//     url: config.apiUrl + '/games',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Bearer ' + store.user.token
-//     },
-//     data
-//   })
-// }
-// const onGetGame = function (data) {
-//   return $.ajax({
-//     url: config.apiUrl + '/games/' + data.games._id,
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Bearer ' + store.user.token
-//     },
-//     data
-//   })
-// }
+const index = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data
+  })
+}
+const onGetGame = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game._id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data
+  })
+}
 const createGame = function (data) {
   return $.ajax({
     url: config.apiUrl + '/games',
@@ -34,7 +34,7 @@ const createGame = function (data) {
     data: {}
   })
 }
-const gameUpdate = function (cellIndex, currentPlayer, isOver) {
+const gameUpdate = function (cellIndex, currentPlayer) {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
@@ -47,14 +47,14 @@ const gameUpdate = function (cellIndex, currentPlayer, isOver) {
           index: cellIndex,
           value: currentPlayer
         },
-        over: isOver
+        over: false
       }
     }
   })
 }
 module.exports = {
-  // index,
+  index,
   gameUpdate,
-  createGame
-  // onGetGame
+  createGame,
+  onGetGame
 }

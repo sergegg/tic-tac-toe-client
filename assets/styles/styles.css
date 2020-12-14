@@ -1,0 +1,29 @@
+* {
+  text-align: center;
+}
+
+.top-intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #0080FF;
+  text-shadow: green 1px 1px 5px;
+}
+
+
+#sign-up {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
+
+#sign-in {
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+.confirmed {
+  display: flex;
+  flex-flow: column nowrap;
+}

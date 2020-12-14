@@ -14,7 +14,9 @@ const signInSuccess = function (response) {
   $('#message').text('Signed in successfully, enjoy your time! ')
   // show all the hidden fields once the user signs in
   $('.confirmed').show()
+  $('.confirmedHeader').show()
   $('.unconfirmed').hide()
+  $('#game-table').hide()
   // store the token which was assigned to the user upon sign in.
   store.user = response.user
   // reset form
@@ -32,6 +34,7 @@ const signOutSuccess = function (response) {
   // hide the confirmed fields and show the unconfirmed agian
   $('.confirmed').hide()
   $('.unconfirmed').show()
+  $('.confirmedHeader').hide()
   // reset
   $('form').trigger('reset')
 }
