@@ -8,7 +8,7 @@ const getFormFields = require('./../../../lib/get-form-fields')
 // let currentPlayer = ''
 const player1 = 'X'
 const player2 = 'O'
-let currentPlayer = player2
+let currentPlayer = player1
 let isOver = false
 
 const onGetGames = function (event) {
@@ -66,88 +66,92 @@ const onGameUpdate = function (event) {
     api.gameUpdate(cellIndex, currentPlayer, isOver)
       .then(ui.onGameUpdateSuccess)
       .catch(ui.onError)
-    if (currentPlayer === player1) {
-      currentPlayer = player2
-    } else {
-      currentPlayer = player1
-    }
   } else {
     $('#message2').text('No can do, try again in an empty box.. ')
   }
-  for (let i = 0; i < 9; i++) {
-    if ((store.game.cells[0] === (player1 || player2)) &&
-        (store.game.cells[1] === (player1 || player2)) &&
-        (store.game.cells[2] === (player1 || player2))) {
-      isOver = true
-      api.gameUpdate(cellIndex, currentPlayer, isOver)
-        .then(ui.onGameOver)
+  if ((store.game.cells[0] === currentPlayer) &&
+        (store.game.cells[1] === currentPlayer) &&
+        (store.game.cells[2] === currentPlayer)) {
+    isOver = true
+    api.gameUpdate(cellIndex, currentPlayer, isOver)
+      .then(ui.onGameOver)
     // api.gameUpdate(cellIndex, currentPlayer, isOver)
     //   .then(ui.onGameOver)
-    } else if
-    ((store.game.cells[0] === (player1 || player2)) &&
-      (store.game.cells[3] === (player1 || player2)) &&
-      (store.game.cells[6] === (player1 || player2))) {
-      isOver = true
-      api.gameUpdate(cellIndex, currentPlayer, isOver)
-        .then(ui.onGameOver)
+  } else if
+  ((store.game.cells[0] === currentPlayer) &&
+      (store.game.cells[3] === currentPlayer) &&
+      (store.game.cells[6] === currentPlayer)) {
+    isOver = true
+    api.gameUpdate(cellIndex, currentPlayer, isOver)
+      .then(ui.onGameOver)
     // api.gameUpdate(cellIndex, currentPlayer, isOver)
     //   .then(ui.onGameOver)
-    } else if
-    ((store.game.cells[6] === (player1 || player2)) &&
-        (store.game.cells[7] === (player1 || player2)) &&
-        (store.game.cells[8] === (player1 || player2))) {
-      isOver = true
-      api.gameUpdate(cellIndex, currentPlayer, isOver)
-        .then(ui.onGameOver)
+  } else if
+  ((store.game.cells[6] === currentPlayer) &&
+        (store.game.cells[7] === currentPlayer) &&
+        (store.game.cells[8] === currentPlayer)) {
+    isOver = true
+    api.gameUpdate(cellIndex, currentPlayer, isOver)
+      .then(ui.onGameOver)
     // api.gameUpdate(cellIndex, currentPlayer, isOver)
     //   .then(ui.onGameOver)
-    } else if
-    ((store.game.cells[2] === (player1 || player2)) &&
-        (store.game.cells[5] === (player1 || player2)) &&
-        (store.game.cells[8] === (player1 || player2))) {
-      isOver = true
-      api.gameUpdate(cellIndex, currentPlayer, isOver)
-        .then(ui.onGameOver)
+  } else if
+  ((store.game.cells[2] === currentPlayer) &&
+        (store.game.cells[5] === currentPlayer) &&
+        (store.game.cells[8] === currentPlayer)) {
+    isOver = true
+    api.gameUpdate(cellIndex, currentPlayer, isOver)
+      .then(ui.onGameOver)
     // api.gameUpdate(cellIndex, currentPlayer, isOver)
     //   .then(ui.onGameOver)
-    } else if
-    ((store.game.cells[0] === (player1 || player2)) &&
-      (store.game.cells[4] === (player1 || player2)) &&
-      (store.game.cells[8] === (player1 || player2))) {
-      isOver = true
-      api.gameUpdate(cellIndex, currentPlayer, isOver)
-        .then(ui.onGameOver)
+  } else if
+  ((store.game.cells[0] === currentPlayer) &&
+      (store.game.cells[4] === currentPlayer) &&
+      (store.game.cells[8] === currentPlayer)) {
+    isOver = true
+    api.gameUpdate(cellIndex, currentPlayer, isOver)
+      .then(ui.onGameOver)
     // api.gameUpdate(cellIndex, currentPlayer, isOver)
     //   .then(ui.onGameOver)
-    } else if
-    ((store.game.cells[2] === (player1 || player2)) &&
-    (store.game.cells[4] === (player1 || player2)) &&
-    (store.game.cells[6] === (player1 || player2))) {
-      isOver = true
-      api.gameUpdate(cellIndex, currentPlayer, isOver)
-        .then(ui.onGameOver)
+  } else if
+  ((store.game.cells[2] === currentPlayer) &&
+    (store.game.cells[4] === currentPlayer) &&
+    (store.game.cells[6] === currentPlayer)) {
+    isOver = true
+    api.gameUpdate(cellIndex, currentPlayer, isOver)
+      .then(ui.onGameOver)
     // api.gameUpdate(cellIndex, currentPlayer, isOver)
     //   .then(ui.onGameOver)
-    } else if
-    ((store.game.cells[1] === (player1 || player2)) &&
-        (store.game.cells[4] === (player1 || player2)) &&
-        (store.game.cells[7] === (player1 || player2))) {
-      isOver = true
-      api.gameUpdate(cellIndex, currentPlayer, isOver)
-        .then(ui.onGameOver)
+  } else if
+  ((store.game.cells[1] === currentPlayer) &&
+        (store.game.cells[4] === currentPlayer) &&
+        (store.game.cells[7] === currentPlayer)) {
+    isOver = true
+    api.gameUpdate(cellIndex, currentPlayer, isOver)
+      .then(ui.onGameOver)
     // api.gameUpdate(cellIndex, currentPlayer, isOver)
     //   .then(ui.onGameOver)
-    } else if
-    ((store.game.cells[3] === (player1 || player2)) &&
-        (store.game.cells[4] === (player1 || player2)) &&
-        (store.game.cells[5] === (player1 || player2))) {
-      isOver = true
-      api.gameUpdate(cellIndex, currentPlayer, isOver)
-        .then(ui.onGameOver)
+  } else if
+  ((store.game.cells[3] === currentPlayer) &&
+        (store.game.cells[4] === currentPlayer) &&
+        (store.game.cells[5] === currentPlayer)) {
+    isOver = true
+    api.gameUpdate(cellIndex, currentPlayer, isOver)
+      .then(ui.onGameOver)
     // api.gameUpdate(cellIndex, currentPlayer, isOver)
     //   .then(ui.onGameOver)
-    }
+  } else {
+    $('#message2').text('No winner yet, next player.. ')
+    currentPlayer = currentPlayer === player1 ? player2 : player1
+    // if (currentPlayer === player1) {
+    //   currentPlayer = player2
+    // } else {
+    //   currentPlayer = player1
+    // }
   }
+  // else {
+  //   currentPlayer = currentPlayer === 'X' ? 'O' : 'X'
+  // }
 
   // console.log('I am cellIndex AFTER', cellIndex)
   // console.log('I am currentBox AFTER ', currentBox)
