@@ -28,13 +28,13 @@ const onGameUpdateSuccess = function (event) {
   // $('#message2').text('Game updated. Next player move ')
 }
 
-const onGameOver = function (response) {
-  store.game = response.game
-  // console.log('hello, are you here? ', event)
-  // console.log('store.game huh? ', store.game)
-  $('#message2').text('You won! congragulations!')
-  // $('#game-table').unbind(response.game)
-}
+// const onGameOver = function (response) {
+//   store.game = response.game
+//   console.log('hello, are you here? ', event)
+//   console.log('store.game huh? ', store.game)
+//   $('#message2').text('You won! congragulations!')
+//   $('#game-table').unbind(response.game)
+// }
 
 const onGetGameSuccess = function (event) {
   $('#message2').text('Games Generated ! ')
@@ -52,7 +52,7 @@ module.exports = {
   onError,
   onGetGamesSuccess,
   onGetGameSuccess,
-  onGameOver,
+  // onGameOver,
   onCreateGameSuccess,
   onGameUpdateSuccess
 }
