@@ -1,18 +1,17 @@
 # Tic-Tac-Toe Project
 
-### Planning Story
+## Planning Story
 
-#### Development Process
-#### Strategy to Solve Problems
-### Unsolved Problems
+### Development Process
+### Strategy to Solve Problems
 
 ### Technologies Used to Complete Project
-Jquery
-Javascript
-HTML / CSS
-SCSS
-Bootstrap
-Flexbox
+  * Jquery
+  * Javascript
+  * HTML / CSS
+  * SCSS
+  * Bootstrap
+  * Flexbox
 
 ### Images && User Stories
 
@@ -29,3 +28,5 @@ Flexbox
 
 ##### Wireframe:
 []
+
+## Unsolved Problems
