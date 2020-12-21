@@ -8,51 +8,33 @@ const onError = function (error) {
   $('#message2').text('Failed to execute, please try again or fix the code. ', error)
 }
 const onCreateGameSuccess = function (event) {
-  $('#message2').text('Game Created. Have fun! "X" goes first ')
+  $('#message2').text('New game Created. "X" goes first. Have fun, dont cheat 8)!')
   $('#game-table').show()
-  // for (const key in event) {
-  // // this check can be safely omitted in modern JS engines
-  //   delete event[key]
-  // }
-  // $('#b').html('Pick me!')
-  console.log('the event for create game is ', event)
+  // event object is stored inside the API
   store.game = event.game
   // console.log('current is', event)
 }
 
 const onGameUpdateSuccess = function (event) {
   // $('#message2').show()
+  // simply store the current position of players into the data.
   store.game = event.game
-  console.log('hello, are you here? ', event)
-  console.log('store.game huh? ', store.game)
-  // $('#message2').text('Game updated. Next player move ')
-}
-
-// const onGameOver = function (response) {
-//   store.game = response.game
-//   console.log('hello, are you here? ', event)
-//   console.log('store.game huh? ', store.game)
-//   $('#message2').text('You won! congragulations!')
-//   $('#game-table').unbind(response.game)
-// }
-
-const onGetGameSuccess = function (event) {
-  $('#message2').text('Games Generated ! ')
-  store.game = event.game
+  // console.log('hello, are you here? ', event)
+  // console.log('store.game huh? ', store.game)
 }
 
 const onGetGamesSuccess = function (event) {
+  // set games to the current total length of games created
   const games = event.games.length
   // console.log('what is gameS?? ', games)
-  // let gamesHTML = ''
-  $('#message2').text('The total games played is: ', games)
+  // display the total amount of games played.
+  $('#message2').html(`The total games you've played and created is: ${games}`)
 }
 
 module.exports = {
   onError,
   onGetGamesSuccess,
-  onGetGameSuccess,
-  // onGameOver,
+  // onGetGameSuccess,
   onCreateGameSuccess,
   onGameUpdateSuccess
 }
