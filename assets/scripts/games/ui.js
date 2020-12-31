@@ -11,6 +11,13 @@ const onCreateGameSuccess = function (event) {
   $('#message2').text('New game Created. "X" goes first. Have fun, dont cheat 8)!')
   $('#game-table').show()
   // event object is stored inside the API
+  // console.log('event.target is --- ', event.target) // undefined
+  // console.log('event is IN UI ', event)
+  // // console.log('event.html?? ', event.game.html) // undefined
+  // console.log('event.game is IN UI ', event.game) // game object is event.game
+  // console.log('what is store -- IN UI --', store)
+  // event.over = false
+  $('.col-4').html('')
   store.game = event.game
   // console.log('current is', event)
 }
@@ -19,8 +26,8 @@ const onGameUpdateSuccess = function (event) {
   // $('#message2').show()
   // simply store the current position of players into the data.
   store.game = event.game
-  // console.log('hello, are you here? ', event)
-  // console.log('store.game huh? ', store.game)
+  // console.log('hello, are you here event? ', event) // the game object
+  // console.log('store.game huh? ', store.game) // game object
 }
 
 const onGetGamesSuccess = function (event) {
