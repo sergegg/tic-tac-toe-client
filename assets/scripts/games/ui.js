@@ -8,7 +8,7 @@ const onError = function (error) {
   $('#message2').text('Failed to execute, please try again or fix the code. ', error)
 }
 const onCreateGameSuccess = function (event) {
-  $('#message2').text('New game Created. "X" goes first. Have fun, dont cheat 8)!')
+  $('#message2').text('New game Created. Player "X" goes first. Have fun & dont cheat 8)!')
   $('#game-table').show()
   // event object is stored inside the API
   // console.log('event.target is --- ', event.target) // undefined

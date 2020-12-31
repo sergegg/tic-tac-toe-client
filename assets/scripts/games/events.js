@@ -51,6 +51,18 @@ const onGameUpdate = function (event) {
   // store.game.over is checked, if its false (resets after game object is sent)
   // then continue filling in the boxes as regular.
   if ($(currentBox).html() === '' && store.game.over === false) {
+    // i need to check if the board is full.. to tell user the game is over, start new
+    // if (store.game.over === false && (store.game.cells[cellIndex] === player1 || player2)) {
+    //   $('#message2').text('box is taken or game is over, start a new game if over!')
+    // }
+
+    // need to create a logic where the game lets you know if there is a tie..
+    // for (let i = 0; i < 9; i++) {
+    //   if (i <= 9) {
+    //     $('#message2').text('Game is a tie! ')
+    //     isOver = true
+    //   }
+    // }
     $(currentBox).html(currentPlayer)
     store.game.cells[cellIndex] = currentPlayer
     if ((store.game.cells[0] === currentPlayer) &&
@@ -113,8 +125,10 @@ const onGameUpdate = function (event) {
       .catch(ui.onError)
       // if ? if true : if false
     currentPlayer = currentPlayer === player1 ? player2 : player1
+  } else if (store.game.cells[cellIndex] !== '') {
+    $('#message2').text('No can do, you are trying to put your mark on a box which is already selected.. Please try again :) ')
   } else {
-    $('#message2').text('No can do, either the game is over or you are trying to put your mark on a box which is already selected.. Please try again :) ')
+    $('#message2').text('No can do, the game is over!')
   }
 }
 
