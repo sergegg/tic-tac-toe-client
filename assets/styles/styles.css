@@ -2,15 +2,15 @@
   text-align: center;
 }
 
-/*   background-color: rgba(37, 86, 16, 0.75); */
 .top-intro {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: #0080FF;
-  text-shadow: green 1px 1px 5px;
+  text-shadow: #2c682c 3px 3px 5px;
 }
 
+/* GREEN #2c682c */
 
 #sign-up {
 display: flex;
@@ -27,16 +27,32 @@ justify-content: center;
 .confirmed {
   display: flex;
   flex-flow: column nowrap;
+  background-color: rgba(119, 212, 119, 0.75);
 }
 
-#b{
-width: 75%;
+#b {
+width: 100%;
 max-width: 1080px;
 padding: 15px 0px 15px 0px;
 border-color: solid rgba(102, 25, 15, 0.75) 2px;
 background-color: rgba(37, 86, 16, 0.75);
 }
 
-/* #b {
-  background-color: rgba(102, 25, 15, 0.75);
-} */
+#get-games {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#view-games {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  color: rgba(11, 70, 173, 0.92);
+}
+
+#start-game {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

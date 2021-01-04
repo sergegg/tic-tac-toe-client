@@ -15,13 +15,6 @@ const onGetGames = function (event) {
     .then(ui.onGetGamesSuccess)
     .catch(ui.onError)
 }
-// const onGetGame = function (event) {
-//   event.preventDefault()
-//   const game = getFormFields(event.target)
-//   api.onGetGame(game)
-//     .then(ui.onGetGameSuccess)
-//     .catch(ui.onError)
-// }
 
 const onCreateGame = function () {
   event.preventDefault()
@@ -33,7 +26,6 @@ const onCreateGame = function () {
     .then(ui.onCreateGameSuccess)
     .catch(ui.onError)
 }
-// function to figure out the position of
 
 const onGameUpdate = function (event) {
   // prevent refreshing of page
@@ -55,14 +47,10 @@ const onGameUpdate = function (event) {
     // if (store.game.over === false && (store.game.cells[cellIndex] === player1 || player2)) {
     //   $('#message2').text('box is taken or game is over, start a new game if over!')
     // }
-
+    if ($(currentBox).html() !== '' && store.game.over !== true) {
+      $('#message2').text('The game is a tie! No winner')
+    }
     // need to create a logic where the game lets you know if there is a tie..
-    // for (let i = 0; i < 9; i++) {
-    //   if (i <= 9) {
-    //     $('#message2').text('Game is a tie! ')
-    //     isOver = true
-    //   }
-    // }
     $(currentBox).html(currentPlayer)
     store.game.cells[cellIndex] = currentPlayer
     if ((store.game.cells[0] === currentPlayer) &&

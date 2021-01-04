@@ -35,7 +35,7 @@ const onGetGamesSuccess = function (event) {
   const games = event.games.length
   // console.log('what is gameS?? ', games)
   // display the total amount of games played.
-  $('#message2').html(`The total games you've played and created is: ${games}`)
+  $('#view-games').html(`The total games you've played and created is: ${games}`)
 }
 
 module.exports = {

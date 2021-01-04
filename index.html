@@ -2,19 +2,17 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>tic-tac-toe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/styles/styles.css">
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 <body>
 
-  <header class="toptop">
 <div class ="top-intro">
   <h1>Classic Tic-Tac-Toe! </h1>
   <div class="unconfirmed">
@@ -35,7 +33,7 @@
     <button type="button" name="button">Sign Out!</button>
     <p>Hope to see you back soon!</p>
   </form>
-  <form id="change-pw" action="PATCH"w>
+  <form id="change-pw" action="PATCH">
     <input placeholder="Old Password" type="password" name="passwords[old]"/>
     <input placeholder="New Password" type="password" name="passwords[new]"/>
     <button type="submit" name="button">Confirm Changes</button>
@@ -43,15 +41,9 @@
 </div>
 </div>
 
-</header>
-
 <p id="message"></p>
 <div class='confirmed'>
     <p id="message2"></p>
-    <form id="get-games" action="GET">
-      <button type="button"
-        name="button">Click here to view your game count!</button>
-    </form>
     <form id="start-game" action="POST">
       <button type="button" name="button">Click here to start new game!</button>
     </form>
@@ -66,10 +58,14 @@
          <button data-cell-index='7' id="b" type="button" class="col-4"></button>
          <button data-cell-index='8' id="b" type="button" class="col-4"></button>
    </div>
+   <form id="get-games" action="GET">
+     <button type="button"
+       name="button">Click here to view your game count!</button>
+   </form>
+   <p id="view-games"></p>
 </div>
  <!-- <footer>
      <h5>This application was built and designed by Sergey Honiyan</h5>
   </footer> -->
-
 </body>
 </html>
