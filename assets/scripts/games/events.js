@@ -47,9 +47,9 @@ const onGameUpdate = function (event) {
     // if (store.game.over === false && (store.game.cells[cellIndex] === player1 || player2)) {
     //   $('#message2').text('box is taken or game is over, start a new game if over!')
     // }
-    if ($(currentBox).html() !== '' && store.game.over !== true) {
-      $('#message2').text('The game is a tie! No winner')
-    }
+    // if ($(currentBox).html() !== '' && store.game.over !== true) {
+    //   $('#message2').text('The game is a tie! No winner')
+    // }
     // need to create a logic where the game lets you know if there is a tie..
     $(currentBox).html(currentPlayer)
     store.game.cells[cellIndex] = currentPlayer

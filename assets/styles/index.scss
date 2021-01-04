@@ -1,3 +1,4 @@
+@import '~bootstrap/scss/bootstrap';
 * {
   text-align: center;
 }
@@ -7,7 +8,7 @@
   flex-direction: row;
   justify-content: space-between;
   background-color: #0080FF;
-  text-shadow: #2c682c 3px 3px 5px;
+  text-shadow: green 1px 1px 5px;
 }
 
 /* GREEN #2c682c */
@@ -26,15 +27,14 @@ justify-content: center;
 
 .confirmed {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   background-color: rgba(119, 212, 119, 0.75);
 }
 
 #b {
-width: 100%;
 max-width: 1080px;
-padding: 15px 0px 15px 0px;
-border-color: solid rgba(102, 25, 15, 0.75) 2px;
+padding: 15px 5px 15px 5px;
+border-color: solid rgba(102, 25, 15, 0.75);
 background-color: rgba(37, 86, 16, 0.75);
 }
 
@@ -48,7 +48,7 @@ background-color: rgba(37, 86, 16, 0.75);
   display: flex;
   justify-content: center;
   flex-direction: row;
-  color: rgba(11, 70, 173, 0.92);
+  color: rgba(46, 160, 209, .9);
 }
 
 #start-game {
