@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>tic-tac-toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="assets/styles/styles.scss"> -->
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+<body>
+
+<div class ="top-intro">
+  <h1>Classic Tic-Tac-Toe! </h1>
+  <div class="unconfirmed">
+    <form id="sign-up" action="POST">
+      <input placeholder="Email" type="email" name="credentials[email]" />
+      <input placeholder="Desired Password" type="password" name="credentials[password]" />
+      <input placeholder="Confirm Password" type="password" name="credentials[password_confirmation]" />
+      <button type="submit" name="button">Sign up!</button>
+    </form>
+    <form id="sign-in" action="POST">
+      <input placeholder="Your Email" type="text" name="credentials[email]" />
+      <input placeholder="Your Password" type="password" name="credentials[password]" />
+      <button type="submit" name="button">Sign in!</button>
+    </form>
+  </div>
+  <div class="confirmedHeader">
+  <form id="sign-out" action='DELETE'>
+    <button type="button" name="button">Sign Out!</button>
+    <p>Hope to see you back soon!</p>
+  </form>
+  <form id="change-pw" action="PATCH">
+    <input placeholder="Old Password" type="password" name="passwords[old]"/>
+    <input placeholder="New Password" type="password" name="passwords[new]"/>
+    <button type="submit" name="button">Confirm Changes</button>
+  </form>
+</div>
+</div>
+
+<p id="message"></p>
+<div class='confirmed'>
+    <p id="message2"></p>
+    <form id="start-game" action="POST">
+      <button type="button" name="button">Click here to start new game!</button>
+    </form>
+    <div id="game-table" class="row">
+         <button data-cell-index='0' id="b" type="button" class="col-4"></button>
+         <button data-cell-index='1' id="b" type="button" class="col-4"></button>
+         <button data-cell-index='2' id="b" type="button" class="col-4"></button>
+         <button data-cell-index='3' id="b" type="button" class="col-4"></button>
+         <button data-cell-index='4' id="b" type="button" class="col-4"></button>
+         <button data-cell-index='5' id="b" type="button" class="col-4"></button>
+         <button data-cell-index='6' id="b" type="button" class="col-4"></button>
+         <button data-cell-index='7' id="b" type="button" class="col-4"></button>
+         <button data-cell-index='8' id="b" type="button" class="col-4"></button>
+   </div>
+   <form id="get-games" action="GET">
+     <button type="button"
+       name="button">Click here to view your game count!</button>
+   </form>
+   <p id="view-games"></p>
+</div>
+</body>
+</html>
